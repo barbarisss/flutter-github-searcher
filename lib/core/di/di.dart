@@ -1,5 +1,11 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_github_searcher/core/network/dio_client.dart';
+import 'package:flutter_github_searcher/data/data_source/remote/base_user_remote_data_source.dart';
+import 'package:flutter_github_searcher/data/data_source/remote/user_remote_data_source.dart';
+import 'package:flutter_github_searcher/data/repository/user_repository_impl.dart';
+import 'package:flutter_github_searcher/domain/repository/user_repository.dart';
+import 'package:flutter_github_searcher/domain/use_case/get_user_use_case.dart';
+import 'package:flutter_github_searcher/presentation/bloc/user_bloc.dart';
 import 'package:get_it/get_it.dart';
 
 final getIt = GetIt.instance;
@@ -10,28 +16,24 @@ Future<void> initDependencies() async {
   getIt.registerLazySingleton<Dio>(() => Dio());
 
   // Data Source
-  // injector.registerLazySingleton<BaseCurrencyRemoteDataSource>(
-  //   () => CurrencyRemoteDataSource(),
-  // );
+  getIt.registerLazySingleton<BaseUserRemoteDataSource>(
+    () => UserRemoteDataSource(),
+  );
 
   // Repository
-  // getIt.registerLazySingleton<CurrencyRepository>(
-  //   () => CurrencyRepositoryImpl(currencyRemoteDataSource: getIt()),
-  // );
+  getIt.registerLazySingleton<UserRepository>(
+    () => UserRepositoryImpl(userRemoteDataSource: getIt()),
+  );
 
   // Use Case
-  // getIt.registerLazySingleton(
-  //   () => GetAllCurrenciesUseCase(currencyRepository: getIt()),
-  // );
-  // getIt.registerLazySingleton(
-  //   () => GetAllCurrenciesHistoricalUseCase(currencyRepository: getIt()),
-  // );
+  getIt.registerLazySingleton(
+    () => GetUserUseCase(userRepository: getIt()),
+  );
 
   // BLoC
-  // getIt.registerFactory(
-  //   () => CurrencyBloc(
-  //     getAllCurrenciesUseCase: getIt(),
-  //     getAllCurrenciesHistoricalUseCase: getIt(),
-  //   ),
-  // );
+  getIt.registerFactory(
+    () => UserBloc(
+      getUserUseCase: getIt(),
+    ),
+  );
 }
