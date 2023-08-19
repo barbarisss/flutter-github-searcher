@@ -1,5 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_github_searcher/domain/entity/user_entity.dart';
+import 'package:flutter_github_searcher/data/model/user_model.dart';
 import 'package:flutter_github_searcher/domain/use_case/get_user_use_case.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -15,8 +15,18 @@ class UserBloc extends Bloc<UserEvent, UserState> {
   final GetUserUseCase getUserUseCase;
 
   onGetUserEvent(GetUserEvent event, Emitter<UserState> emit) async {
+    emit(const UserState.loading());
+
     final nickname = event.nickname;
-    final user = await getUserUseCase(nickname);
-    emit(UserState.loaded(user));
+    final response = await getUserUseCase(nickname);
+
+    response.when(
+      failure: (error) {
+        emit(UserState.failed(error));
+      },
+      success: (data) {
+        emit(UserState.loaded(data));
+      },
+    );
   }
 }

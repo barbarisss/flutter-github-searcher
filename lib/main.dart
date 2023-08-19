@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_github_searcher/core/di/di.dart';
+import 'package:flutter_github_searcher/core/extension/extension.dart';
+import 'package:flutter_github_searcher/data/data_source/remote/user_remote_data_source.dart';
 
 void main() {
   initDependencies();
@@ -17,7 +19,22 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: Scaffold(
-        body: Container(),
+        body: Container(
+          child: Builder(
+            builder: (context) {
+              UserRemoteDataSource remote = UserRemoteDataSource();
+              try {
+                remote.getUser('barbariwefsfdgsagasgasf');
+              } on ResourceNotFoundException catch (e) {
+                print('adasdasdasd');
+                print(e);
+                print(e.toString());
+              }
+              // remote.getUser('barbariwefsfdgsagasgasf');
+              return SizedBox();
+            },
+          ),
+        ),
       ),
     );
   }

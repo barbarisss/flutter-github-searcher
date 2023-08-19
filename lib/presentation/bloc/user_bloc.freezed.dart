@@ -225,24 +225,24 @@ mixin _$UserState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(UserEntity user) loaded,
-    required TResult Function() falled,
+    required TResult Function(UserModel user) loaded,
+    required TResult Function(String error) failed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(UserEntity user)? loaded,
-    TResult? Function()? falled,
+    TResult? Function(UserModel user)? loaded,
+    TResult? Function(String error)? failed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(UserEntity user)? loaded,
-    TResult Function()? falled,
+    TResult Function(UserModel user)? loaded,
+    TResult Function(String error)? failed,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -251,7 +251,7 @@ mixin _$UserState {
     required TResult Function(_InitialUserState value) initial,
     required TResult Function(_LoadingUserState value) loading,
     required TResult Function(_LoadedUserState value) loaded,
-    required TResult Function(_FalledUserState value) falled,
+    required TResult Function(_FailedUserState value) failed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -259,7 +259,7 @@ mixin _$UserState {
     TResult? Function(_InitialUserState value)? initial,
     TResult? Function(_LoadingUserState value)? loading,
     TResult? Function(_LoadedUserState value)? loaded,
-    TResult? Function(_FalledUserState value)? falled,
+    TResult? Function(_FailedUserState value)? failed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -267,7 +267,7 @@ mixin _$UserState {
     TResult Function(_InitialUserState value)? initial,
     TResult Function(_LoadingUserState value)? loading,
     TResult Function(_LoadedUserState value)? loaded,
-    TResult Function(_FalledUserState value)? falled,
+    TResult Function(_FailedUserState value)? failed,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -330,8 +330,8 @@ class _$_InitialUserState implements _InitialUserState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(UserEntity user) loaded,
-    required TResult Function() falled,
+    required TResult Function(UserModel user) loaded,
+    required TResult Function(String error) failed,
   }) {
     return initial();
   }
@@ -341,8 +341,8 @@ class _$_InitialUserState implements _InitialUserState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(UserEntity user)? loaded,
-    TResult? Function()? falled,
+    TResult? Function(UserModel user)? loaded,
+    TResult? Function(String error)? failed,
   }) {
     return initial?.call();
   }
@@ -352,8 +352,8 @@ class _$_InitialUserState implements _InitialUserState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(UserEntity user)? loaded,
-    TResult Function()? falled,
+    TResult Function(UserModel user)? loaded,
+    TResult Function(String error)? failed,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -368,7 +368,7 @@ class _$_InitialUserState implements _InitialUserState {
     required TResult Function(_InitialUserState value) initial,
     required TResult Function(_LoadingUserState value) loading,
     required TResult Function(_LoadedUserState value) loaded,
-    required TResult Function(_FalledUserState value) falled,
+    required TResult Function(_FailedUserState value) failed,
   }) {
     return initial(this);
   }
@@ -379,7 +379,7 @@ class _$_InitialUserState implements _InitialUserState {
     TResult? Function(_InitialUserState value)? initial,
     TResult? Function(_LoadingUserState value)? loading,
     TResult? Function(_LoadedUserState value)? loaded,
-    TResult? Function(_FalledUserState value)? falled,
+    TResult? Function(_FailedUserState value)? failed,
   }) {
     return initial?.call(this);
   }
@@ -390,7 +390,7 @@ class _$_InitialUserState implements _InitialUserState {
     TResult Function(_InitialUserState value)? initial,
     TResult Function(_LoadingUserState value)? loading,
     TResult Function(_LoadedUserState value)? loaded,
-    TResult Function(_FalledUserState value)? falled,
+    TResult Function(_FailedUserState value)? failed,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -444,8 +444,8 @@ class _$_LoadingUserState implements _LoadingUserState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(UserEntity user) loaded,
-    required TResult Function() falled,
+    required TResult Function(UserModel user) loaded,
+    required TResult Function(String error) failed,
   }) {
     return loading();
   }
@@ -455,8 +455,8 @@ class _$_LoadingUserState implements _LoadingUserState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(UserEntity user)? loaded,
-    TResult? Function()? falled,
+    TResult? Function(UserModel user)? loaded,
+    TResult? Function(String error)? failed,
   }) {
     return loading?.call();
   }
@@ -466,8 +466,8 @@ class _$_LoadingUserState implements _LoadingUserState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(UserEntity user)? loaded,
-    TResult Function()? falled,
+    TResult Function(UserModel user)? loaded,
+    TResult Function(String error)? failed,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -482,7 +482,7 @@ class _$_LoadingUserState implements _LoadingUserState {
     required TResult Function(_InitialUserState value) initial,
     required TResult Function(_LoadingUserState value) loading,
     required TResult Function(_LoadedUserState value) loaded,
-    required TResult Function(_FalledUserState value) falled,
+    required TResult Function(_FailedUserState value) failed,
   }) {
     return loading(this);
   }
@@ -493,7 +493,7 @@ class _$_LoadingUserState implements _LoadingUserState {
     TResult? Function(_InitialUserState value)? initial,
     TResult? Function(_LoadingUserState value)? loading,
     TResult? Function(_LoadedUserState value)? loaded,
-    TResult? Function(_FalledUserState value)? falled,
+    TResult? Function(_FailedUserState value)? failed,
   }) {
     return loading?.call(this);
   }
@@ -504,7 +504,7 @@ class _$_LoadingUserState implements _LoadingUserState {
     TResult Function(_InitialUserState value)? initial,
     TResult Function(_LoadingUserState value)? loading,
     TResult Function(_LoadedUserState value)? loaded,
-    TResult Function(_FalledUserState value)? falled,
+    TResult Function(_FailedUserState value)? failed,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -524,9 +524,9 @@ abstract class _$$_LoadedUserStateCopyWith<$Res> {
           _$_LoadedUserState value, $Res Function(_$_LoadedUserState) then) =
       __$$_LoadedUserStateCopyWithImpl<$Res>;
   @useResult
-  $Res call({UserEntity user});
+  $Res call({UserModel user});
 
-  $UserEntityCopyWith<$Res> get user;
+  $UserModelCopyWith<$Res> get user;
 }
 
 /// @nodoc
@@ -546,14 +546,14 @@ class __$$_LoadedUserStateCopyWithImpl<$Res>
       null == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
-              as UserEntity,
+              as UserModel,
     ));
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $UserEntityCopyWith<$Res> get user {
-    return $UserEntityCopyWith<$Res>(_value.user, (value) {
+  $UserModelCopyWith<$Res> get user {
+    return $UserModelCopyWith<$Res>(_value.user, (value) {
       return _then(_value.copyWith(user: value));
     });
   }
@@ -565,7 +565,7 @@ class _$_LoadedUserState implements _LoadedUserState {
   const _$_LoadedUserState(this.user);
 
   @override
-  final UserEntity user;
+  final UserModel user;
 
   @override
   String toString() {
@@ -594,8 +594,8 @@ class _$_LoadedUserState implements _LoadedUserState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(UserEntity user) loaded,
-    required TResult Function() falled,
+    required TResult Function(UserModel user) loaded,
+    required TResult Function(String error) failed,
   }) {
     return loaded(user);
   }
@@ -605,8 +605,8 @@ class _$_LoadedUserState implements _LoadedUserState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(UserEntity user)? loaded,
-    TResult? Function()? falled,
+    TResult? Function(UserModel user)? loaded,
+    TResult? Function(String error)? failed,
   }) {
     return loaded?.call(user);
   }
@@ -616,8 +616,8 @@ class _$_LoadedUserState implements _LoadedUserState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(UserEntity user)? loaded,
-    TResult Function()? falled,
+    TResult Function(UserModel user)? loaded,
+    TResult Function(String error)? failed,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -632,7 +632,7 @@ class _$_LoadedUserState implements _LoadedUserState {
     required TResult Function(_InitialUserState value) initial,
     required TResult Function(_LoadingUserState value) loading,
     required TResult Function(_LoadedUserState value) loaded,
-    required TResult Function(_FalledUserState value) falled,
+    required TResult Function(_FailedUserState value) failed,
   }) {
     return loaded(this);
   }
@@ -643,7 +643,7 @@ class _$_LoadedUserState implements _LoadedUserState {
     TResult? Function(_InitialUserState value)? initial,
     TResult? Function(_LoadingUserState value)? loading,
     TResult? Function(_LoadedUserState value)? loaded,
-    TResult? Function(_FalledUserState value)? falled,
+    TResult? Function(_FailedUserState value)? failed,
   }) {
     return loaded?.call(this);
   }
@@ -654,7 +654,7 @@ class _$_LoadedUserState implements _LoadedUserState {
     TResult Function(_InitialUserState value)? initial,
     TResult Function(_LoadingUserState value)? loading,
     TResult Function(_LoadedUserState value)? loaded,
-    TResult Function(_FalledUserState value)? falled,
+    TResult Function(_FailedUserState value)? failed,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -665,58 +665,84 @@ class _$_LoadedUserState implements _LoadedUserState {
 }
 
 abstract class _LoadedUserState implements UserState {
-  const factory _LoadedUserState(final UserEntity user) = _$_LoadedUserState;
+  const factory _LoadedUserState(final UserModel user) = _$_LoadedUserState;
 
-  UserEntity get user;
+  UserModel get user;
   @JsonKey(ignore: true)
   _$$_LoadedUserStateCopyWith<_$_LoadedUserState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_FalledUserStateCopyWith<$Res> {
-  factory _$$_FalledUserStateCopyWith(
-          _$_FalledUserState value, $Res Function(_$_FalledUserState) then) =
-      __$$_FalledUserStateCopyWithImpl<$Res>;
+abstract class _$$_FailedUserStateCopyWith<$Res> {
+  factory _$$_FailedUserStateCopyWith(
+          _$_FailedUserState value, $Res Function(_$_FailedUserState) then) =
+      __$$_FailedUserStateCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String error});
 }
 
 /// @nodoc
-class __$$_FalledUserStateCopyWithImpl<$Res>
-    extends _$UserStateCopyWithImpl<$Res, _$_FalledUserState>
-    implements _$$_FalledUserStateCopyWith<$Res> {
-  __$$_FalledUserStateCopyWithImpl(
-      _$_FalledUserState _value, $Res Function(_$_FalledUserState) _then)
+class __$$_FailedUserStateCopyWithImpl<$Res>
+    extends _$UserStateCopyWithImpl<$Res, _$_FailedUserState>
+    implements _$$_FailedUserStateCopyWith<$Res> {
+  __$$_FailedUserStateCopyWithImpl(
+      _$_FailedUserState _value, $Res Function(_$_FailedUserState) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$_FailedUserState(
+      null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 
-class _$_FalledUserState implements _FalledUserState {
-  const _$_FalledUserState();
+class _$_FailedUserState implements _FailedUserState {
+  const _$_FailedUserState(this.error);
+
+  @override
+  final String error;
 
   @override
   String toString() {
-    return 'UserState.falled()';
+    return 'UserState.failed(error: $error)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_FalledUserState);
+        (other.runtimeType == runtimeType &&
+            other is _$_FailedUserState &&
+            (identical(other.error, error) || other.error == error));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, error);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_FailedUserStateCopyWith<_$_FailedUserState> get copyWith =>
+      __$$_FailedUserStateCopyWithImpl<_$_FailedUserState>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(UserEntity user) loaded,
-    required TResult Function() falled,
+    required TResult Function(UserModel user) loaded,
+    required TResult Function(String error) failed,
   }) {
-    return falled();
+    return failed(error);
   }
 
   @override
@@ -724,10 +750,10 @@ class _$_FalledUserState implements _FalledUserState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(UserEntity user)? loaded,
-    TResult? Function()? falled,
+    TResult? Function(UserModel user)? loaded,
+    TResult? Function(String error)? failed,
   }) {
-    return falled?.call();
+    return failed?.call(error);
   }
 
   @override
@@ -735,12 +761,12 @@ class _$_FalledUserState implements _FalledUserState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(UserEntity user)? loaded,
-    TResult Function()? falled,
+    TResult Function(UserModel user)? loaded,
+    TResult Function(String error)? failed,
     required TResult orElse(),
   }) {
-    if (falled != null) {
-      return falled();
+    if (failed != null) {
+      return failed(error);
     }
     return orElse();
   }
@@ -751,9 +777,9 @@ class _$_FalledUserState implements _FalledUserState {
     required TResult Function(_InitialUserState value) initial,
     required TResult Function(_LoadingUserState value) loading,
     required TResult Function(_LoadedUserState value) loaded,
-    required TResult Function(_FalledUserState value) falled,
+    required TResult Function(_FailedUserState value) failed,
   }) {
-    return falled(this);
+    return failed(this);
   }
 
   @override
@@ -762,9 +788,9 @@ class _$_FalledUserState implements _FalledUserState {
     TResult? Function(_InitialUserState value)? initial,
     TResult? Function(_LoadingUserState value)? loading,
     TResult? Function(_LoadedUserState value)? loaded,
-    TResult? Function(_FalledUserState value)? falled,
+    TResult? Function(_FailedUserState value)? failed,
   }) {
-    return falled?.call(this);
+    return failed?.call(this);
   }
 
   @override
@@ -773,16 +799,21 @@ class _$_FalledUserState implements _FalledUserState {
     TResult Function(_InitialUserState value)? initial,
     TResult Function(_LoadingUserState value)? loading,
     TResult Function(_LoadedUserState value)? loaded,
-    TResult Function(_FalledUserState value)? falled,
+    TResult Function(_FailedUserState value)? failed,
     required TResult orElse(),
   }) {
-    if (falled != null) {
-      return falled(this);
+    if (failed != null) {
+      return failed(this);
     }
     return orElse();
   }
 }
 
-abstract class _FalledUserState implements UserState {
-  const factory _FalledUserState() = _$_FalledUserState;
+abstract class _FailedUserState implements UserState {
+  const factory _FailedUserState(final String error) = _$_FailedUserState;
+
+  String get error;
+  @JsonKey(ignore: true)
+  _$$_FailedUserStateCopyWith<_$_FailedUserState> get copyWith =>
+      throw _privateConstructorUsedError;
 }

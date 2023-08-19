@@ -1,4 +1,5 @@
-import 'package:flutter_github_searcher/domain/entity/user_entity.dart';
+import 'package:flutter_github_searcher/core/network/api_result.dart';
+import 'package:flutter_github_searcher/data/model/user_model.dart';
 import 'package:flutter_github_searcher/domain/repository/user_repository.dart';
 
 class GetUserUseCase {
@@ -6,7 +7,7 @@ class GetUserUseCase {
 
   final UserRepository userRepository;
 
-  Future<UserEntity> call(String nickname) async {
+  Future<ApiResult<UserModel>> call(String nickname) async {
     return await userRepository.getUser(nickname);
   }
 }
