@@ -21,14 +21,14 @@ UserModel _$UserModelFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$UserModel {
   String get login => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-  String get bio => throw _privateConstructorUsedError;
-  String get avatarUrl => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
+  String? get bio => throw _privateConstructorUsedError;
+  String? get avatarUrl => throw _privateConstructorUsedError;
   String get htmlUrl => throw _privateConstructorUsedError;
   int get followers => throw _privateConstructorUsedError;
   int get following => throw _privateConstructorUsedError;
-  int get publicRepos => throw _privateConstructorUsedError;
-  int get totalPublicRepos => throw _privateConstructorUsedError;
+  int? get publicRepos => throw _privateConstructorUsedError;
+  int? get totalPrivateRepos => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -43,14 +43,14 @@ abstract class $UserModelCopyWith<$Res> {
   @useResult
   $Res call(
       {String login,
-      String name,
-      String bio,
-      String avatarUrl,
+      String? name,
+      String? bio,
+      String? avatarUrl,
       String htmlUrl,
       int followers,
       int following,
-      int publicRepos,
-      int totalPublicRepos});
+      int? publicRepos,
+      int? totalPrivateRepos});
 }
 
 /// @nodoc
@@ -67,32 +67,32 @@ class _$UserModelCopyWithImpl<$Res, $Val extends UserModel>
   @override
   $Res call({
     Object? login = null,
-    Object? name = null,
-    Object? bio = null,
-    Object? avatarUrl = null,
+    Object? name = freezed,
+    Object? bio = freezed,
+    Object? avatarUrl = freezed,
     Object? htmlUrl = null,
     Object? followers = null,
     Object? following = null,
-    Object? publicRepos = null,
-    Object? totalPublicRepos = null,
+    Object? publicRepos = freezed,
+    Object? totalPrivateRepos = freezed,
   }) {
     return _then(_value.copyWith(
       login: null == login
           ? _value.login
           : login // ignore: cast_nullable_to_non_nullable
               as String,
-      name: null == name
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      bio: null == bio
+              as String?,
+      bio: freezed == bio
           ? _value.bio
           : bio // ignore: cast_nullable_to_non_nullable
-              as String,
-      avatarUrl: null == avatarUrl
+              as String?,
+      avatarUrl: freezed == avatarUrl
           ? _value.avatarUrl
           : avatarUrl // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       htmlUrl: null == htmlUrl
           ? _value.htmlUrl
           : htmlUrl // ignore: cast_nullable_to_non_nullable
@@ -105,14 +105,14 @@ class _$UserModelCopyWithImpl<$Res, $Val extends UserModel>
           ? _value.following
           : following // ignore: cast_nullable_to_non_nullable
               as int,
-      publicRepos: null == publicRepos
+      publicRepos: freezed == publicRepos
           ? _value.publicRepos
           : publicRepos // ignore: cast_nullable_to_non_nullable
-              as int,
-      totalPublicRepos: null == totalPublicRepos
-          ? _value.totalPublicRepos
-          : totalPublicRepos // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
+      totalPrivateRepos: freezed == totalPrivateRepos
+          ? _value.totalPrivateRepos
+          : totalPrivateRepos // ignore: cast_nullable_to_non_nullable
+              as int?,
     ) as $Val);
   }
 }
@@ -126,14 +126,14 @@ abstract class _$$_UserModelCopyWith<$Res> implements $UserModelCopyWith<$Res> {
   @useResult
   $Res call(
       {String login,
-      String name,
-      String bio,
-      String avatarUrl,
+      String? name,
+      String? bio,
+      String? avatarUrl,
       String htmlUrl,
       int followers,
       int following,
-      int publicRepos,
-      int totalPublicRepos});
+      int? publicRepos,
+      int? totalPrivateRepos});
 }
 
 /// @nodoc
@@ -148,32 +148,32 @@ class __$$_UserModelCopyWithImpl<$Res>
   @override
   $Res call({
     Object? login = null,
-    Object? name = null,
-    Object? bio = null,
-    Object? avatarUrl = null,
+    Object? name = freezed,
+    Object? bio = freezed,
+    Object? avatarUrl = freezed,
     Object? htmlUrl = null,
     Object? followers = null,
     Object? following = null,
-    Object? publicRepos = null,
-    Object? totalPublicRepos = null,
+    Object? publicRepos = freezed,
+    Object? totalPrivateRepos = freezed,
   }) {
     return _then(_$_UserModel(
       login: null == login
           ? _value.login
           : login // ignore: cast_nullable_to_non_nullable
               as String,
-      name: null == name
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      bio: null == bio
+              as String?,
+      bio: freezed == bio
           ? _value.bio
           : bio // ignore: cast_nullable_to_non_nullable
-              as String,
-      avatarUrl: null == avatarUrl
+              as String?,
+      avatarUrl: freezed == avatarUrl
           ? _value.avatarUrl
           : avatarUrl // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       htmlUrl: null == htmlUrl
           ? _value.htmlUrl
           : htmlUrl // ignore: cast_nullable_to_non_nullable
@@ -186,14 +186,14 @@ class __$$_UserModelCopyWithImpl<$Res>
           ? _value.following
           : following // ignore: cast_nullable_to_non_nullable
               as int,
-      publicRepos: null == publicRepos
+      publicRepos: freezed == publicRepos
           ? _value.publicRepos
           : publicRepos // ignore: cast_nullable_to_non_nullable
-              as int,
-      totalPublicRepos: null == totalPublicRepos
-          ? _value.totalPublicRepos
-          : totalPublicRepos // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
+      totalPrivateRepos: freezed == totalPrivateRepos
+          ? _value.totalPrivateRepos
+          : totalPrivateRepos // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -210,7 +210,7 @@ class _$_UserModel implements _UserModel {
       required this.followers,
       required this.following,
       required this.publicRepos,
-      required this.totalPublicRepos});
+      required this.totalPrivateRepos});
 
   factory _$_UserModel.fromJson(Map<String, dynamic> json) =>
       _$$_UserModelFromJson(json);
@@ -218,11 +218,11 @@ class _$_UserModel implements _UserModel {
   @override
   final String login;
   @override
-  final String name;
+  final String? name;
   @override
-  final String bio;
+  final String? bio;
   @override
-  final String avatarUrl;
+  final String? avatarUrl;
   @override
   final String htmlUrl;
   @override
@@ -230,13 +230,13 @@ class _$_UserModel implements _UserModel {
   @override
   final int following;
   @override
-  final int publicRepos;
+  final int? publicRepos;
   @override
-  final int totalPublicRepos;
+  final int? totalPrivateRepos;
 
   @override
   String toString() {
-    return 'UserModel(login: $login, name: $name, bio: $bio, avatarUrl: $avatarUrl, htmlUrl: $htmlUrl, followers: $followers, following: $following, publicRepos: $publicRepos, totalPublicRepos: $totalPublicRepos)';
+    return 'UserModel(login: $login, name: $name, bio: $bio, avatarUrl: $avatarUrl, htmlUrl: $htmlUrl, followers: $followers, following: $following, publicRepos: $publicRepos, totalPrivateRepos: $totalPrivateRepos)';
   }
 
   @override
@@ -256,14 +256,14 @@ class _$_UserModel implements _UserModel {
                 other.following == following) &&
             (identical(other.publicRepos, publicRepos) ||
                 other.publicRepos == publicRepos) &&
-            (identical(other.totalPublicRepos, totalPublicRepos) ||
-                other.totalPublicRepos == totalPublicRepos));
+            (identical(other.totalPrivateRepos, totalPrivateRepos) ||
+                other.totalPrivateRepos == totalPrivateRepos));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, login, name, bio, avatarUrl,
-      htmlUrl, followers, following, publicRepos, totalPublicRepos);
+      htmlUrl, followers, following, publicRepos, totalPrivateRepos);
 
   @JsonKey(ignore: true)
   @override
@@ -282,14 +282,14 @@ class _$_UserModel implements _UserModel {
 abstract class _UserModel implements UserModel {
   factory _UserModel(
       {required final String login,
-      required final String name,
-      required final String bio,
-      required final String avatarUrl,
+      required final String? name,
+      required final String? bio,
+      required final String? avatarUrl,
       required final String htmlUrl,
       required final int followers,
       required final int following,
-      required final int publicRepos,
-      required final int totalPublicRepos}) = _$_UserModel;
+      required final int? publicRepos,
+      required final int? totalPrivateRepos}) = _$_UserModel;
 
   factory _UserModel.fromJson(Map<String, dynamic> json) =
       _$_UserModel.fromJson;
@@ -297,11 +297,11 @@ abstract class _UserModel implements UserModel {
   @override
   String get login;
   @override
-  String get name;
+  String? get name;
   @override
-  String get bio;
+  String? get bio;
   @override
-  String get avatarUrl;
+  String? get avatarUrl;
   @override
   String get htmlUrl;
   @override
@@ -309,9 +309,9 @@ abstract class _UserModel implements UserModel {
   @override
   int get following;
   @override
-  int get publicRepos;
+  int? get publicRepos;
   @override
-  int get totalPublicRepos;
+  int? get totalPrivateRepos;
   @override
   @JsonKey(ignore: true)
   _$$_UserModelCopyWith<_$_UserModel> get copyWith =>

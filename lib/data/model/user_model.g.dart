@@ -8,14 +8,14 @@ part of 'user_model.dart';
 
 _$_UserModel _$$_UserModelFromJson(Map<String, dynamic> json) => _$_UserModel(
       login: json['login'] as String,
-      name: json['name'] as String,
-      bio: json['bio'] as String,
-      avatarUrl: json['avatar_url'] as String,
+      name: json['name'] as String?,
+      bio: json['bio'] as String?,
+      avatarUrl: json['avatar_url'] as String?,
       htmlUrl: json['html_url'] as String,
       followers: json['followers'] as int,
       following: json['following'] as int,
-      publicRepos: json['public_repos'] as int,
-      totalPublicRepos: json['total_public_repos'] as int,
+      publicRepos: json['public_repos'] as int?,
+      totalPrivateRepos: json['total_private_repos'] as int?,
     );
 
 Map<String, dynamic> _$$_UserModelToJson(_$_UserModel instance) =>
@@ -28,5 +28,5 @@ Map<String, dynamic> _$$_UserModelToJson(_$_UserModel instance) =>
       'followers': instance.followers,
       'following': instance.following,
       'public_repos': instance.publicRepos,
-      'total_public_repos': instance.totalPublicRepos,
+      'total_private_repos': instance.totalPrivateRepos,
     };
