@@ -5,4 +5,6 @@ abstract class AppStrings {
   static const followers = 'followers';
   static const following = 'following';
   static const publicRepos = 'public repositories';
+  static const noSuchUser = 'No such user';
+  static const connectionError = 'Connection error';
 }
