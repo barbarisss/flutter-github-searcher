@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_github_searcher/core/di/di.dart';
 import 'package:flutter_github_searcher/presentation/bloc/user_bloc.dart';
@@ -6,6 +7,11 @@ import 'package:flutter_github_searcher/presentation/screen/search_user/search_u
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]);
   initDependencies();
   runApp(const MyApp());
 }
@@ -18,7 +24,7 @@ class MyApp extends StatelessWidget {
     return ScreenUtilInit(
       builder: (context, widget) => MaterialApp(
         title: 'GitHub Searcher',
-        theme: ThemeData(),
+        debugShowCheckedModeBanner: false,
         home: BlocProvider(
           create: (context) => getIt<UserBloc>(),
           child: const SearchUserScreen(),
