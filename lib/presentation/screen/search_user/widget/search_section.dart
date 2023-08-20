@@ -31,10 +31,9 @@ class SearchSeaction extends StatelessWidget {
           Flexible(
             child: TextField(
               controller: searchController,
-              style: const TextStyle(
-                fontSize: 14,
+              style: TextStyle(
+                fontSize: AppConstants.fs14,
               ),
-              // validator: validator,
               decoration: InputDecoration(
                 contentPadding: contentPadding,
                 filled: true,
@@ -71,6 +70,9 @@ class SearchSeaction extends StatelessWidget {
                 },
                 style: ButtonStyle(
                   padding: MaterialStateProperty.all(contentPadding),
+                  textStyle: MaterialStateProperty.all(TextStyle(
+                    fontSize: AppConstants.fs14,
+                  )),
                   backgroundColor: MaterialStateProperty.all(AppColors.green),
                   foregroundColor: MaterialStateProperty.all(AppColors.white),
                   elevation: MaterialStateProperty.all(0),

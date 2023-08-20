@@ -15,9 +15,9 @@ class UserSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final smallTextSize = 14.0.sp;
-    final loginTextSize = 20.0.sp;
-    final nameTextSize = 24.0.sp;
+    final smallTextSize = AppConstants.fs14;
+    final loginTextSize = AppConstants.fs20;
+    final nameTextSize = AppConstants.fs24;
 
     final textHeight = 1.5.h;
 
@@ -74,7 +74,7 @@ class UserSection extends StatelessWidget {
                   user.bio!,
                   style: TextStyle(
                     color: AppColors.black,
-                    fontSize: 16.sp,
+                    fontSize: AppConstants.fs16,
                   ),
                 )
               : const SizedBox(),
