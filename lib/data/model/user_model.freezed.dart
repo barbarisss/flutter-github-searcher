@@ -20,15 +20,24 @@ UserModel _$UserModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$UserModel {
+  @JsonKey(name: "login")
   String get login => throw _privateConstructorUsedError;
+  @JsonKey(name: "name")
   String? get name => throw _privateConstructorUsedError;
+  @JsonKey(name: "bio")
   String? get bio => throw _privateConstructorUsedError;
+  @JsonKey(name: "avatar_url")
   String? get avatarUrl => throw _privateConstructorUsedError;
+  @JsonKey(name: "html_url")
   String get htmlUrl => throw _privateConstructorUsedError;
+  @JsonKey(name: "followers")
   int get followers => throw _privateConstructorUsedError;
+  @JsonKey(name: "following")
   int get following => throw _privateConstructorUsedError;
+  @JsonKey(name: "public_repos")
   int? get publicRepos => throw _privateConstructorUsedError;
-  int? get totalPrivateRepos => throw _privateConstructorUsedError;
+  @JsonKey(name: "total_private_repos")
+  int? get privateRepos => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -42,15 +51,15 @@ abstract class $UserModelCopyWith<$Res> {
       _$UserModelCopyWithImpl<$Res, UserModel>;
   @useResult
   $Res call(
-      {String login,
-      String? name,
-      String? bio,
-      String? avatarUrl,
-      String htmlUrl,
-      int followers,
-      int following,
-      int? publicRepos,
-      int? totalPrivateRepos});
+      {@JsonKey(name: "login") String login,
+      @JsonKey(name: "name") String? name,
+      @JsonKey(name: "bio") String? bio,
+      @JsonKey(name: "avatar_url") String? avatarUrl,
+      @JsonKey(name: "html_url") String htmlUrl,
+      @JsonKey(name: "followers") int followers,
+      @JsonKey(name: "following") int following,
+      @JsonKey(name: "public_repos") int? publicRepos,
+      @JsonKey(name: "total_private_repos") int? privateRepos});
 }
 
 /// @nodoc
@@ -74,7 +83,7 @@ class _$UserModelCopyWithImpl<$Res, $Val extends UserModel>
     Object? followers = null,
     Object? following = null,
     Object? publicRepos = freezed,
-    Object? totalPrivateRepos = freezed,
+    Object? privateRepos = freezed,
   }) {
     return _then(_value.copyWith(
       login: null == login
@@ -109,9 +118,9 @@ class _$UserModelCopyWithImpl<$Res, $Val extends UserModel>
           ? _value.publicRepos
           : publicRepos // ignore: cast_nullable_to_non_nullable
               as int?,
-      totalPrivateRepos: freezed == totalPrivateRepos
-          ? _value.totalPrivateRepos
-          : totalPrivateRepos // ignore: cast_nullable_to_non_nullable
+      privateRepos: freezed == privateRepos
+          ? _value.privateRepos
+          : privateRepos // ignore: cast_nullable_to_non_nullable
               as int?,
     ) as $Val);
   }
@@ -125,15 +134,15 @@ abstract class _$$_UserModelCopyWith<$Res> implements $UserModelCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {String login,
-      String? name,
-      String? bio,
-      String? avatarUrl,
-      String htmlUrl,
-      int followers,
-      int following,
-      int? publicRepos,
-      int? totalPrivateRepos});
+      {@JsonKey(name: "login") String login,
+      @JsonKey(name: "name") String? name,
+      @JsonKey(name: "bio") String? bio,
+      @JsonKey(name: "avatar_url") String? avatarUrl,
+      @JsonKey(name: "html_url") String htmlUrl,
+      @JsonKey(name: "followers") int followers,
+      @JsonKey(name: "following") int following,
+      @JsonKey(name: "public_repos") int? publicRepos,
+      @JsonKey(name: "total_private_repos") int? privateRepos});
 }
 
 /// @nodoc
@@ -155,7 +164,7 @@ class __$$_UserModelCopyWithImpl<$Res>
     Object? followers = null,
     Object? following = null,
     Object? publicRepos = freezed,
-    Object? totalPrivateRepos = freezed,
+    Object? privateRepos = freezed,
   }) {
     return _then(_$_UserModel(
       login: null == login
@@ -190,9 +199,9 @@ class __$$_UserModelCopyWithImpl<$Res>
           ? _value.publicRepos
           : publicRepos // ignore: cast_nullable_to_non_nullable
               as int?,
-      totalPrivateRepos: freezed == totalPrivateRepos
-          ? _value.totalPrivateRepos
-          : totalPrivateRepos // ignore: cast_nullable_to_non_nullable
+      privateRepos: freezed == privateRepos
+          ? _value.privateRepos
+          : privateRepos // ignore: cast_nullable_to_non_nullable
               as int?,
     ));
   }
@@ -202,41 +211,50 @@ class __$$_UserModelCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_UserModel implements _UserModel {
   _$_UserModel(
-      {required this.login,
-      required this.name,
-      required this.bio,
-      required this.avatarUrl,
-      required this.htmlUrl,
-      required this.followers,
-      required this.following,
-      required this.publicRepos,
-      required this.totalPrivateRepos});
+      {@JsonKey(name: "login") required this.login,
+      @JsonKey(name: "name") required this.name,
+      @JsonKey(name: "bio") required this.bio,
+      @JsonKey(name: "avatar_url") required this.avatarUrl,
+      @JsonKey(name: "html_url") required this.htmlUrl,
+      @JsonKey(name: "followers") required this.followers,
+      @JsonKey(name: "following") required this.following,
+      @JsonKey(name: "public_repos") required this.publicRepos,
+      @JsonKey(name: "total_private_repos") required this.privateRepos});
 
   factory _$_UserModel.fromJson(Map<String, dynamic> json) =>
       _$$_UserModelFromJson(json);
 
   @override
+  @JsonKey(name: "login")
   final String login;
   @override
+  @JsonKey(name: "name")
   final String? name;
   @override
+  @JsonKey(name: "bio")
   final String? bio;
   @override
+  @JsonKey(name: "avatar_url")
   final String? avatarUrl;
   @override
+  @JsonKey(name: "html_url")
   final String htmlUrl;
   @override
+  @JsonKey(name: "followers")
   final int followers;
   @override
+  @JsonKey(name: "following")
   final int following;
   @override
+  @JsonKey(name: "public_repos")
   final int? publicRepos;
   @override
-  final int? totalPrivateRepos;
+  @JsonKey(name: "total_private_repos")
+  final int? privateRepos;
 
   @override
   String toString() {
-    return 'UserModel(login: $login, name: $name, bio: $bio, avatarUrl: $avatarUrl, htmlUrl: $htmlUrl, followers: $followers, following: $following, publicRepos: $publicRepos, totalPrivateRepos: $totalPrivateRepos)';
+    return 'UserModel(login: $login, name: $name, bio: $bio, avatarUrl: $avatarUrl, htmlUrl: $htmlUrl, followers: $followers, following: $following, publicRepos: $publicRepos, privateRepos: $privateRepos)';
   }
 
   @override
@@ -256,14 +274,14 @@ class _$_UserModel implements _UserModel {
                 other.following == following) &&
             (identical(other.publicRepos, publicRepos) ||
                 other.publicRepos == publicRepos) &&
-            (identical(other.totalPrivateRepos, totalPrivateRepos) ||
-                other.totalPrivateRepos == totalPrivateRepos));
+            (identical(other.privateRepos, privateRepos) ||
+                other.privateRepos == privateRepos));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, login, name, bio, avatarUrl,
-      htmlUrl, followers, following, publicRepos, totalPrivateRepos);
+      htmlUrl, followers, following, publicRepos, privateRepos);
 
   @JsonKey(ignore: true)
   @override
@@ -281,37 +299,47 @@ class _$_UserModel implements _UserModel {
 
 abstract class _UserModel implements UserModel {
   factory _UserModel(
-      {required final String login,
-      required final String? name,
-      required final String? bio,
-      required final String? avatarUrl,
-      required final String htmlUrl,
-      required final int followers,
-      required final int following,
-      required final int? publicRepos,
-      required final int? totalPrivateRepos}) = _$_UserModel;
+      {@JsonKey(name: "login") required final String login,
+      @JsonKey(name: "name") required final String? name,
+      @JsonKey(name: "bio") required final String? bio,
+      @JsonKey(name: "avatar_url") required final String? avatarUrl,
+      @JsonKey(name: "html_url") required final String htmlUrl,
+      @JsonKey(name: "followers") required final int followers,
+      @JsonKey(name: "following") required final int following,
+      @JsonKey(name: "public_repos") required final int? publicRepos,
+      @JsonKey(name: "total_private_repos")
+      required final int? privateRepos}) = _$_UserModel;
 
   factory _UserModel.fromJson(Map<String, dynamic> json) =
       _$_UserModel.fromJson;
 
   @override
+  @JsonKey(name: "login")
   String get login;
   @override
+  @JsonKey(name: "name")
   String? get name;
   @override
+  @JsonKey(name: "bio")
   String? get bio;
   @override
+  @JsonKey(name: "avatar_url")
   String? get avatarUrl;
   @override
+  @JsonKey(name: "html_url")
   String get htmlUrl;
   @override
+  @JsonKey(name: "followers")
   int get followers;
   @override
+  @JsonKey(name: "following")
   int get following;
   @override
+  @JsonKey(name: "public_repos")
   int? get publicRepos;
   @override
-  int? get totalPrivateRepos;
+  @JsonKey(name: "total_private_repos")
+  int? get privateRepos;
   @override
   @JsonKey(ignore: true)
   _$$_UserModelCopyWith<_$_UserModel> get copyWith =>

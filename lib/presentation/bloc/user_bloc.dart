@@ -9,12 +9,12 @@ part 'user_bloc.freezed.dart';
 
 class UserBloc extends Bloc<UserEvent, UserState> {
   UserBloc({required this.getUserUseCase}) : super(const UserState.initial()) {
-    on<UserEvent>((event, emit) => onGetUserEvent);
+    on<GetUserEvent>(_onGetUserEvent);
   }
 
   final GetUserUseCase getUserUseCase;
 
-  onGetUserEvent(GetUserEvent event, Emitter<UserState> emit) async {
+  _onGetUserEvent(GetUserEvent event, Emitter<UserState> emit) async {
     emit(const UserState.loading());
 
     final nickname = event.nickname;

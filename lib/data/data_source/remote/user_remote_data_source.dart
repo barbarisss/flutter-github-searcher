@@ -16,8 +16,15 @@ class UserRemoteDataSource implements BaseUserRemoteDataSource {
         '${ApiConfig.users}/$nickname',
       );
 
+      print('first print:  ${response}');
+
       final data = response.data as Map<String, dynamic>;
+
+      print('second print: ${data.toString()}');
+
       final user = UserModel.fromJson(data);
+
+      print(user.toString());
 
       return ApiResult.success(user);
     } on DioException catch (e) {

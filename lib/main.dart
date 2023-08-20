@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_github_searcher/core/di/di.dart';
+import 'package:flutter_github_searcher/presentation/bloc/user_bloc.dart';
 import 'package:flutter_github_searcher/presentation/screen/search_user/search_user_screen.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -16,10 +18,11 @@ class MyApp extends StatelessWidget {
     return ScreenUtilInit(
       builder: (context, widget) => MaterialApp(
         title: 'GitHub Searcher',
-        theme: ThemeData(
-          useMaterial3: true,
+        theme: ThemeData(),
+        home: BlocProvider(
+          create: (context) => getIt<UserBloc>(),
+          child: const SearchUserScreen(),
         ),
-        home: const SearchUserScreen(),
       ),
       designSize: const Size(375, 775),
     );
