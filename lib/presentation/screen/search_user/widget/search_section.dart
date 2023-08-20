@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_github_searcher/core/utils/colors.dart';
 import 'package:flutter_github_searcher/core/utils/constants.dart';
+import 'package:flutter_github_searcher/core/utils/strings.dart';
 import 'package:flutter_github_searcher/presentation/bloc/user_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -39,7 +40,7 @@ class SearchSeaction extends StatelessWidget {
                 filled: true,
                 isDense: true,
                 fillColor: AppColors.white,
-                hintText: 'Input nickname',
+                hintText: AppStrings.inputNickname,
                 border: OutlineInputBorder(
                   borderRadius: borderRadius,
                 ),
@@ -65,9 +66,6 @@ class SearchSeaction extends StatelessWidget {
             builder: (context, state) {
               return ElevatedButton(
                 onPressed: () {
-                  // context
-                  //     .read<UserBloc>()
-                  //     .add(GetUserEvent(searchController.text));
                   BlocProvider.of<UserBloc>(context)
                       .add(GetUserEvent(searchController.text));
                 },
@@ -80,7 +78,7 @@ class SearchSeaction extends StatelessWidget {
                     RoundedRectangleBorder(borderRadius: borderRadius),
                   ),
                 ),
-                child: const Text('Search'),
+                child: const Text(AppStrings.search),
               );
             },
           ),

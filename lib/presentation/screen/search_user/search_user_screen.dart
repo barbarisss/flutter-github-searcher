@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_github_searcher/core/utils/colors.dart';
 import 'package:flutter_github_searcher/presentation/bloc/user_bloc.dart';
 import 'package:flutter_github_searcher/presentation/screen/search_user/widget/search_section.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_github_searcher/presentation/screen/search_user/widget/user_section.dart';
 
 class SearchUserScreen extends StatelessWidget {
   const SearchUserScreen({super.key});
@@ -19,7 +19,7 @@ class SearchUserScreen extends StatelessWidget {
           width: double.infinity,
           child: Column(
             children: [
-              SearchSeaction(),
+              const SearchSeaction(),
               BlocBuilder<UserBloc, UserState>(builder: (context, state) {
                 state.when(
                   initial: () {
@@ -35,9 +35,7 @@ class SearchUserScreen extends StatelessWidget {
                     ));
                   },
                   loaded: (user) {
-                    bodyWidget = const SizedBox(
-                      child: Text('loaded'),
-                    );
+                    bodyWidget = UserSection(user: user);
                   },
                   failed: (error) {
                     bodyWidget = Text(error);

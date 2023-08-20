@@ -13,8 +13,7 @@ class UserModel with _$UserModel {
     @JsonKey(name: "html_url") required String htmlUrl,
     @JsonKey(name: "followers") required int followers,
     @JsonKey(name: "following") required int following,
-    @JsonKey(name: "public_repos") required int? publicRepos,
-    @JsonKey(name: "total_private_repos") required int? privateRepos,
+    @JsonKey(name: "public_repos") required int publicRepos,
   }) = _UserModel;
 
   factory UserModel.fromJson(Map<String, dynamic> json) =>
