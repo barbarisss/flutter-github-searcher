@@ -9,7 +9,7 @@ class UserModel with _$UserModel {
     @JsonKey(name: "login") required String login,
     @JsonKey(name: "name") required String? name,
     @JsonKey(name: "bio") required String? bio,
-    @JsonKey(name: "avatar_url") required String? avatarUrl,
+    @JsonKey(name: "avatar_url") required String avatarUrl,
     @JsonKey(name: "html_url") required String htmlUrl,
     @JsonKey(name: "followers") required int followers,
     @JsonKey(name: "following") required int following,

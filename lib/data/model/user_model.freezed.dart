@@ -27,7 +27,7 @@ mixin _$UserModel {
   @JsonKey(name: "bio")
   String? get bio => throw _privateConstructorUsedError;
   @JsonKey(name: "avatar_url")
-  String? get avatarUrl => throw _privateConstructorUsedError;
+  String get avatarUrl => throw _privateConstructorUsedError;
   @JsonKey(name: "html_url")
   String get htmlUrl => throw _privateConstructorUsedError;
   @JsonKey(name: "followers")
@@ -52,7 +52,7 @@ abstract class $UserModelCopyWith<$Res> {
       {@JsonKey(name: "login") String login,
       @JsonKey(name: "name") String? name,
       @JsonKey(name: "bio") String? bio,
-      @JsonKey(name: "avatar_url") String? avatarUrl,
+      @JsonKey(name: "avatar_url") String avatarUrl,
       @JsonKey(name: "html_url") String htmlUrl,
       @JsonKey(name: "followers") int followers,
       @JsonKey(name: "following") int following,
@@ -75,7 +75,7 @@ class _$UserModelCopyWithImpl<$Res, $Val extends UserModel>
     Object? login = null,
     Object? name = freezed,
     Object? bio = freezed,
-    Object? avatarUrl = freezed,
+    Object? avatarUrl = null,
     Object? htmlUrl = null,
     Object? followers = null,
     Object? following = null,
@@ -94,10 +94,10 @@ class _$UserModelCopyWithImpl<$Res, $Val extends UserModel>
           ? _value.bio
           : bio // ignore: cast_nullable_to_non_nullable
               as String?,
-      avatarUrl: freezed == avatarUrl
+      avatarUrl: null == avatarUrl
           ? _value.avatarUrl
           : avatarUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       htmlUrl: null == htmlUrl
           ? _value.htmlUrl
           : htmlUrl // ignore: cast_nullable_to_non_nullable
@@ -129,7 +129,7 @@ abstract class _$$_UserModelCopyWith<$Res> implements $UserModelCopyWith<$Res> {
       {@JsonKey(name: "login") String login,
       @JsonKey(name: "name") String? name,
       @JsonKey(name: "bio") String? bio,
-      @JsonKey(name: "avatar_url") String? avatarUrl,
+      @JsonKey(name: "avatar_url") String avatarUrl,
       @JsonKey(name: "html_url") String htmlUrl,
       @JsonKey(name: "followers") int followers,
       @JsonKey(name: "following") int following,
@@ -150,7 +150,7 @@ class __$$_UserModelCopyWithImpl<$Res>
     Object? login = null,
     Object? name = freezed,
     Object? bio = freezed,
-    Object? avatarUrl = freezed,
+    Object? avatarUrl = null,
     Object? htmlUrl = null,
     Object? followers = null,
     Object? following = null,
@@ -169,10 +169,10 @@ class __$$_UserModelCopyWithImpl<$Res>
           ? _value.bio
           : bio // ignore: cast_nullable_to_non_nullable
               as String?,
-      avatarUrl: freezed == avatarUrl
+      avatarUrl: null == avatarUrl
           ? _value.avatarUrl
           : avatarUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       htmlUrl: null == htmlUrl
           ? _value.htmlUrl
           : htmlUrl // ignore: cast_nullable_to_non_nullable
@@ -220,7 +220,7 @@ class _$_UserModel implements _UserModel {
   final String? bio;
   @override
   @JsonKey(name: "avatar_url")
-  final String? avatarUrl;
+  final String avatarUrl;
   @override
   @JsonKey(name: "html_url")
   final String htmlUrl;
@@ -282,7 +282,7 @@ abstract class _UserModel implements UserModel {
           {@JsonKey(name: "login") required final String login,
           @JsonKey(name: "name") required final String? name,
           @JsonKey(name: "bio") required final String? bio,
-          @JsonKey(name: "avatar_url") required final String? avatarUrl,
+          @JsonKey(name: "avatar_url") required final String avatarUrl,
           @JsonKey(name: "html_url") required final String htmlUrl,
           @JsonKey(name: "followers") required final int followers,
           @JsonKey(name: "following") required final int following,
@@ -303,7 +303,7 @@ abstract class _UserModel implements UserModel {
   String? get bio;
   @override
   @JsonKey(name: "avatar_url")
-  String? get avatarUrl;
+  String get avatarUrl;
   @override
   @JsonKey(name: "html_url")
   String get htmlUrl;

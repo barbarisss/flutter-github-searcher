@@ -4,6 +4,7 @@ import 'package:flutter_github_searcher/core/utils/constants.dart';
 import 'package:flutter_github_searcher/core/utils/strings.dart';
 import 'package:flutter_github_searcher/data/model/user_model.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class UserSection extends StatelessWidget {
   const UserSection({
@@ -32,41 +33,14 @@ class UserSection extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Row(
-            children: [
-              ClipOval(
-                child: Image.network(
-                  user.avatarUrl!,
-                  height: imageHeight,
-                ),
-              ),
-              SizedBox(width: AppConstants.mainPaddingWidth),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  user.name != null
-                      ? Text(
-                          user.name!,
-                          style: TextStyle(
-                            color: AppColors.black,
-                            fontSize: nameTextSize,
-                            fontWeight: FontWeight.w600,
-                            height: textHeight,
-                          ),
-                        )
-                      : const SizedBox(),
-                  Text(
-                    user.login,
-                    style: TextStyle(
-                      color: AppColors.grey,
-                      fontSize: loginTextSize,
-                      fontWeight: FontWeight.w100,
-                      height: textHeight,
-                    ),
-                  ),
-                ],
-              ),
-            ],
+          _NameWidget(
+            avatarUrl: user.avatarUrl,
+            login: user.login,
+            name: user.name,
+            loginFontSize: loginTextSize,
+            nameFontSize: nameTextSize,
+            lineHeight: textHeight,
+            avatarHeight: imageHeight,
           ),
           SizedBox(height: AppConstants.mainPaddingHeight * 2),
           user.bio != null
@@ -95,6 +69,7 @@ class UserSection extends StatelessWidget {
           ),
           SizedBox(height: AppConstants.mainPaddingHeight * 2),
           GestureDetector(
+            onTap: () => goToWeb(user.htmlUrl),
             child: Text(
               AppStrings.seeMore,
               style: TextStyle(
@@ -106,6 +81,76 @@ class UserSection extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+
+  void goToWeb(String link) {
+    final Uri uri = Uri.parse(link);
+
+    launchUrl(
+      uri,
+      mode: LaunchMode.externalApplication,
+    );
+  }
+}
+
+class _NameWidget extends StatelessWidget {
+  const _NameWidget({
+    super.key,
+    required this.avatarUrl,
+    required this.login,
+    required this.name,
+    required this.loginFontSize,
+    required this.nameFontSize,
+    required this.lineHeight,
+    required this.avatarHeight,
+  });
+
+  final String avatarUrl;
+  final String login;
+  final String? name;
+  final double loginFontSize;
+  final double nameFontSize;
+  final double lineHeight;
+  final double avatarHeight;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        ClipOval(
+          child: Image.network(
+            avatarUrl,
+            height: avatarHeight,
+          ),
+        ),
+        SizedBox(width: AppConstants.mainPaddingWidth),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            name != null
+                ? Text(
+                    name!,
+                    style: TextStyle(
+                      color: AppColors.black,
+                      fontSize: nameFontSize,
+                      fontWeight: FontWeight.w600,
+                      height: lineHeight,
+                    ),
+                  )
+                : const SizedBox(),
+            Text(
+              login,
+              style: TextStyle(
+                color: AppColors.grey,
+                fontSize: loginFontSize,
+                fontWeight: FontWeight.w100,
+                height: lineHeight,
+              ),
+            ),
+          ],
+        ),
+      ],
     );
   }
 }
